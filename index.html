@@ -6,7 +6,7 @@
 <title>스타벅스 멋진매장 찾아가기</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8c9141dc43dcda8a4b4edd5208f81ba0&libraries=clusterer"></script>
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8c9141dc43dcda8a4b4edd5208f81ba0&autoload=false"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
@@ -528,8 +528,10 @@ function toast(msg){
   setTimeout(()=>t.classList.remove('show'),2200);
 }
 
-updateHeader();
-render();
+kakao.maps.load(function(){
+  updateHeader();
+  render();
+});
 </script>
 </body>
 </html>
